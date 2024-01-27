@@ -4,9 +4,10 @@ import toast from "react-hot-toast";
 import { signIn } from "next-auth/react";
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { useRef } from "react";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 const SignInForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -31,7 +32,7 @@ const SignInForm = () => {
       }
 
       toast.success("Authentication successful");
-      router.refresh;
+      router.reload();
       router.push("/");
     } catch (error: any) {
       toast.error(error.message || "Authentication failed");
