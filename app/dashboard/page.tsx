@@ -5,7 +5,7 @@ import formatPrice from "@/utils/formatPrice";
 
 const page = async () => {
   const user = await getCurrentUser();
-  const orders = await getOrders(user);
+  const orders = user ? await getOrders(user) : null;
   return (
     <>
       {user ? (
@@ -31,12 +31,12 @@ const page = async () => {
               <>
                 {orders?.map((order) => (
                   <div
-                    key={order.id}
+                    key={order?.id}
                     className="rounded-lg p-8 my-4 space-y-2 bg-gray-200"
                   >
                     <h2 className="text-xs font-medium">
                       Order Number:{" "}
-                      {order.id.replaceAll(/\D/g, "")}
+                      {order?.id.replaceAll(/\D/g, "")}
                     </h2>
                     <p className="text-xs">
                       Status: {order.status}
@@ -45,7 +45,7 @@ const page = async () => {
                     <div className="text-sm lg:flex items-center gap-4">
                       {order.items.map((product) => (
                         <div
-                          key={product.id}
+                          key={product?.id}
                           className="py-2"
                         >
                           {product.image && (

@@ -13,12 +13,12 @@ export async function GET(req: NextRequest, res: NextResponse) {
     })
 
     if (!latestOrder){
-      return
+      return NextResponse.json({ orderId: null });
     }
     
     return NextResponse.json({orderId: latestOrder.id})
   } catch (error){
     console.error(error)
-    return
+    return NextResponse.error();
   }
 }

@@ -36,9 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
   return (
     <>
       <nav className="fixed h-fit w-full bg-red-900 text-white z-[100] p-1">
-        <marquee behavior="scroll" direction="left" scrollamount="4">
         Disclaimer: All deliveries will be made within 24 hours. Any damaged items must be returned for a replacement.
-        </marquee>
       </nav>
       <nav className="relative pt-12">
         <div className="main-container border-b border-1 flex justify-between items-center py-2 relative">
