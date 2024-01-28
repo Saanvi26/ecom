@@ -36,7 +36,8 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
   return (
     <>
       <nav className="fixed h-fit w-full bg-red-900 text-white z-[100] p-1 text-center items-center mx-auto">
-        Disclaimer: All deliveries will be made within 24 hours. Any damaged items must be returned for a replacement.
+        MADE BY PRANSHU GUPTA - DEMO PROJECT
+        {/* Disclaimer: All deliveries will be made within 24 hours. Any damaged items must be returned for a replacement. */}
       </nav>
       <nav className="relative pt-12">
         <div className="main-container border-b border-1 flex justify-between items-center py-2 relative">
